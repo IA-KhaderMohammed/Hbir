@@ -1,0 +1,13 @@
+.gateway-key
+gateway.db
+gateway.db-*
+*.bak
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+gateway.log

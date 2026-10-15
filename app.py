@@ -362,8 +362,9 @@ class Handler(BaseHTTPRequestHandler):
 init_db()
 
 if __name__ == "__main__":
-    server = ThreadingHTTPServer(("0.0.0.0", 8765), Handler)
-    print("Video Security Gateway listening on 0.0.0.0:8765")
+    port = int(os.environ.get("PORT", "8765"))
+    server = ThreadingHTTPServer(("0.0.0.0", port), Handler)
+    print(f"Video Security Gateway listening on 0.0.0.0:{port}")
     print("Local educational prototype only. Press Ctrl+C to stop.")
     try:
         server.serve_forever()
